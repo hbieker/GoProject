@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 )
 
 //Uppercase variable in package is globally visible
@@ -33,6 +34,22 @@ func main() {
 	//Shadow variable is initially the package level value
 	fmt.Printf("Value and Type is %v, %T\n", d, d)
 	d := 41
-	fmt.Printf("Value and Type is %v, %T", d, d)
+	fmt.Printf("Value and Type is %v, %T\n", d, d)
+
+	//convert from one variable type to another
+	var e int = 50
+	fmt.Printf("Value and Type is %v, %T before conversion \n", e, e)
+
+	var f float32
+	f = float32(e)
+	fmt.Printf("Value and Type is %v, %T after conversion\n", f, f)
+
+	//Convert int to String. ex: for logging. Otherwise it converts to the ascii char
+	var g int = 60
+	fmt.Printf("Value and Type is %v, %T before conversion to string\n", g, g)
+
+	var h string
+	h = strconv.Itoa(g)
+	fmt.Printf("Value and Type is %v, %T after conversion\n", h, h)
 
 }
